@@ -1,6 +1,6 @@
-import MainBanner from "../components/MainBanner";
+import { MainBanner } from "../components/MainBanner";
 import useMousePosition from "../hooks/useMousePosition";
-import Image from "next/image";
+import Quote from "../components/Quote";
 import Faq from "../components/Faq";
 
 export default function Home() {
@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <MainBanner x={x} y={y} />
+      <Quote />
       <Faq />
     </>
   );

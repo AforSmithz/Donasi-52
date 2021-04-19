@@ -5,6 +5,7 @@ export const Headline = styled(motion.div)`
   font-size: 13vw;
   height: auto;
   overflow: hidden;
+  width: max-content;
   font-family: serif;
   span {
     display: inline-block;
@@ -14,6 +15,11 @@ export const Headline = styled(motion.div)`
   @media (min-width: 1000px) {
     line-height: 0.9;
   }
+`;
+
+export const TitleSpan = styled(motion.span)`
+  display: inline-block;
+  position: relative;
 `;
 
 export const HomeContainer = styled(motion.div)`
@@ -33,4 +39,5 @@ export const Line = styled(motion.div)`
 export const HoverImage = styled(motion.div)`
   position: absolute;
   height: 0;
+  z-index: -100;
 `;

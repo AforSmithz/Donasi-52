@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { Children, useEffect, useRef, useState } from "react";
 import {
   Headline,
   HomeContainer,
@@ -8,21 +8,20 @@ import {
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { DonateButton, Flex } from "../styles/globalStyle";
 import { motion, whileHover } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import Letters from "../data/letters.json";
 
-const MainBanner = ({ x, y }) => {
+export const MainBanner = ({ x, y }) => {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
   const [hovered, setHovered] = useState(false);
   const [textPos, setTextPos] = useState({ top: 0, left: 0 });
 
-  let list = useRef(null);
-  let test = useRef(null);
+  let lima2 = useRef(null);
 
   useEffect(() => {
     setTextPos({
-      top: list.current.getBoundingClientRect().top,
-      left: list.current.getBoundingClientRect().left,
+      top: lima2.current.getBoundingClientRect().top,
+      left: lima2.current.getBoundingClientRect().left,
     });
   }, [setTextPos]);
 
@@ -66,42 +65,37 @@ const MainBanner = ({ x, y }) => {
   return (
     <HomeContainer>
       <div>
+        <Headline variants={limadua} initial="initial" animate="animate">
+          {/* 52 */}
+          {Letters.map((item) => (
+            <CharTitle key={item.id} x={x} y={y} image={item.image}>
+              {item.letter}
+            </CharTitle>
+          ))}
+        </Headline>
         <Headline
-          variants={limadua}
+          variants={Berbagi}
           initial="initial"
           animate="animate"
           onHoverStart={() => setHovered(true)}
           onHoverEnd={() => setHovered(false)}
-          ref={list}
+          ref={lima2}
         >
-          <motion.span variants={child}>D</motion.span>
-          <motion.span variants={child}>o</motion.span>
-          <motion.span variants={child}>n</motion.span>
-          <motion.span variants={child}>a</motion.span>
-          <motion.span variants={child}>s</motion.span>
-          <motion.span variants={child}>i</motion.span>
-          {/* 52 */}
-        </Headline>
-        <Headline variants={Berbagi} initial="initial" animate="animate">
+          {/* Berbagi */}
           <motion.span variants={child}>5</motion.span>
           <motion.span variants={child}>2</motion.span>
-          {/* Berbagi */}
         </Headline>
+        <HoverImage
+          initial={{ opacity: 0 }}
+          animate={{
+            opacity: hovered ? 1 : 0,
+            x: x - textPos.left + 50,
+            y: y - textPos.top - 200,
+          }}
+        >
+          <img src="/assets/images/foto9.png" height="300" />
+        </HoverImage>
       </div>
-      <HoverImage
-        initial={{ opacity: 0 }}
-        animate={{
-          opacity: hovered ? 1 : 0,
-          x: x - textPos.left - 200,
-          y: y - textPos.top - 300,
-        }}
-      >
-        <img
-          src={require("../assets/images/foto2.png")}
-          width="250"
-          height="200"
-        />
-      </HoverImage>
       <Line
         initial={{ width: 0 }}
         animate={{ width: "40vw", transition: { ...transition, delay: 1 } }}
@@ -134,4 +128,50 @@ const MainBanner = ({ x, y }) => {
   );
 };
 
-export default MainBanner;
+export const CharTitle = ({ children, offset, x, y, image }) => {
+  const [hovered, setHovered] = useState(false);
+  const [textPos, setTextPos] = useState({ top: 0, left: 0 });
+
+  const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+
+  let character = useRef(null);
+
+  useEffect(() => {
+    setTextPos({
+      top: character.current.getBoundingClientRect().top,
+      left: character.current.getBoundingClientRect().left,
+    });
+  }, [setTextPos]);
+
+  const child = {
+    initial: {
+      y: 400,
+    },
+    animate: {
+      y: 0,
+      transition: { duration: 1, ...transition },
+    },
+  };
+  return (
+    <>
+      <motion.span
+        variants={child}
+        onHoverStart={() => setHovered(true)}
+        onHoverEnd={() => setHovered(false)}
+        ref={character}
+      >
+        {children}
+      </motion.span>
+      <HoverImage
+        initial={{ opacity: 0 }}
+        animate={{
+          opacity: hovered ? 1 : 0,
+          x: x - textPos.left + 100,
+          y: y - textPos.top - 50,
+        }}
+      >
+        <img src={`/assets/images/${image}.png`} width="300px" />
+      </HoverImage>
+    </>
+  );
+};
