@@ -58,10 +58,15 @@ export const Flex = styled(motion.div)`
 export const DonateButton = styled(motion.a)`
   display: flex;
   font-size: 1.5rem;
+  width: 200px;
+
+  @media (max-width: 500px) {
+    width: 35vw;
+    font-size: 1rem;
+  }
   align-items: center;
   justify-content: center;
   border: 2px solid black;
   border-radius: 20px;
   min-height: 5vh;
-  width: 35vw;
 `;
