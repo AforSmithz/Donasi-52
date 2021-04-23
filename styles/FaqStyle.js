@@ -6,35 +6,41 @@ export const Dropdown = styled.div`
   display: flex;
   flex-direction: column;
   gap: 5rem;
-  padding-bottom: 500px;
+  padding-bottom: 200px;
 `;
 
-export const FaqContainer = styled.div`
+export const FaqContainer = styled(motion.div)`
   height: auto;
   width: 100%;
+  box-sizing: border-box;
   display: flex;
   align-items: flex-start;
+  /* margin-right: 20px; */
+
+  @media (max-width: 1000px) {
+    align-items: center;
+  }
 
   ${(props) =>
     props.right &&
     css`
-      align-items: flex-start;
-      @media (min-width: 1000px) {
+      padding-right: 10px;
+      @media (min-width: 500px) {
         align-items: flex-end;
       }
     `}
   flex-direction: column;
-  ${(props) =>
+  /* ${(props) =>
     props.right ||
     css`
-      @media (min-width: 1000px) {
-        padding-left: 100px;
+        padding-left: 50px;
       }
-    `}
+    `} */
 `;
 
 export const Question = styled(motion.div)`
   display: flex;
+  box-sizing: border-box;
   align-items: center;
   height: 100%;
   width: 55vw;
@@ -67,29 +73,15 @@ export const Question = styled(motion.div)`
 `;
 
 export const Answer = styled(motion.div)`
-  display: flex;
   overflow: hidden;
-  width: 50vw;
-  font-size: 1rem;
-  @media (min-width: 1000px) {
-    font-size: 3rem;
+  box-sizing: border-box;
+  width: 40vw;
+  margin-left: 100px;
+  /* height: 100%; */
+  font-size: 2vw;
+  @media (max-width: 500px) {
+    font-size: 3.5vw;
   }
 
   margin-top: 20px;
-  ${(props) =>
-    props.right &&
-    css`
-      align-items: flex-end;
-      @media (min-width: 1000px) {
-        align-items: flex-start;
-      }
-    `}
-  ${(props) =>
-    props.right ||
-    css`
-      ${"" /* margin-left: 100px; */}
-      @media (min-width: 1000px) {
-        align-items: flex-start;
-      }
-    `}
 `;

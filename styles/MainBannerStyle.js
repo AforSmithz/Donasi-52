@@ -3,6 +3,9 @@ import styled, { css } from "styled-components";
 
 export const Headline = styled(motion.div)`
   font-size: 13vw;
+  @media (max-width : 1000px) {
+    font-size : 5rem;
+  }
   height: auto;
   overflow: hidden;
   width: max-content;
@@ -39,5 +42,9 @@ export const Line = styled(motion.div)`
 export const HoverImage = styled(motion.div)`
   position: absolute;
   height: 0;
+  width: 0;
   z-index: -100;
+  img {
+    height: 25vh;
+  }
 `;

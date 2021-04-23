@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useAnimation } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { useInView } from "react-intersection-observer";
 import { Dropdown, Answer, FaqContainer, Question } from "../styles/FaqStyle";
 
 const Faq = () => {
-  const [expanded, setExpanded] = useState("0");
-
   const qnas = [
     {
       id: "0",
@@ -33,23 +33,64 @@ const Faq = () => {
 
   return (
     <Dropdown>
-      {qnas.map((qnas, index) => (
-        <FaqContainer right={(index + 1) % 2 ? false : true} key={qnas.id}>
-          <Question
-            onClick={() => setExpanded(qnas.id === expanded ? false : qnas.id)}
-          >
-            <span>{index + 1}</span>
-            {qnas.question}
-          </Question>
-          <Answer
-            right={(index + 1) % 2 ? false : true}
-            animate={{ height: qnas.id === expanded ? "100%" : "0" }}
-          >
-            {qnas.answer}
-          </Answer>
-        </FaqContainer>
+      {qnas.map((qna, index) => (
+        <Qna
+          key={qna.id}
+          id={qna.id}
+          index={index}
+          question={qna.question}
+          answer={qna.answer}
+        />
       ))}
     </Dropdown>
+  );
+};
+
+const Qna = ({ id, index, question, answer }) => {
+  const animate = useAnimation();
+
+  const [contentRef, inView] = useInView({
+    triggerOnce: true,
+    rootMargin: "-300px",
+  });
+
+  useEffect(() => {
+    if (inView) {
+      animate.start("visible");
+    }
+  }, [animate, inView]);
+
+  const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
+  const [expanded, setExpanded] = useState(null);
+  return (
+    <>
+      <FaqContainer
+        ref={contentRef}
+        animate={animate}
+        initial="hidden"
+        variants={{
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { duration: 1, ease: [0.6, 0.05, -0.01, 0.9] },
+          },
+          hidden: {
+            opacity: 0,
+            y: 72,
+          },
+        }}
+        right={(index + 1) % 2 ? false : true}
+        key={id}
+      >
+        <Question onClick={() => setExpanded(id === expanded ? false : id)}>
+          <span>{index + 1}</span>
+          {question}
+        </Question>
+        <Answer animate={{ height: id === expanded ? "100%" : "0" }}>
+          {answer}
+        </Answer>
+      </FaqContainer>
+    </>
   );
 };
 

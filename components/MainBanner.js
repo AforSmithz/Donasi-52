@@ -89,16 +89,16 @@ export const MainBanner = ({ x, y }) => {
           initial={{ opacity: 0 }}
           animate={{
             opacity: hovered ? 1 : 0,
-            x: x - textPos.left + 50,
-            y: y - textPos.top - 200,
+            x: x - textPos.left - 100,
+            y: y - textPos.top - 300,
           }}
         >
-          <img src="/assets/images/foto9.png" height="300" />
+          <img src="/assets/images/foto2.png"/>
         </HoverImage>
       </div>
       <Line
         initial={{ width: 0 }}
-        animate={{ width: "40vw", transition: { ...transition, delay: 1 } }}
+        animate={{ width: "60vw", transition: { ...transition, delay: 1 } }}
       />
       <DonateButton
         whileHover={{
@@ -107,6 +107,8 @@ export const MainBanner = ({ x, y }) => {
           scale: 1.1,
           transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.09] },
         }}
+        href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        target='_blank'
         style={{ margin: "2rem" }}
       >
         Donate Now
@@ -167,10 +169,10 @@ export const CharTitle = ({ children, offset, x, y, image }) => {
         animate={{
           opacity: hovered ? 1 : 0,
           x: x - textPos.left + 100,
-          y: y - textPos.top - 50,
+          y: y - textPos.top - 20,
         }}
       >
-        <img src={`/assets/images/${image}.png`} width="300px" />
+        <img src={`/assets/images/${image}.png`} />
       </HoverImage>
     </>
   );

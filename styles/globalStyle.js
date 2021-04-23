@@ -59,6 +59,8 @@ export const DonateButton = styled(motion.a)`
   display: flex;
   font-size: 1.5rem;
   width: 200px;
+  color: black;
+  text-decoration: none;
 
   @media (max-width: 500px) {
     width: 35vw;
