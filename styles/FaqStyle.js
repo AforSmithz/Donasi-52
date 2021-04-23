@@ -15,6 +15,7 @@ export const FaqContainer = styled(motion.div)`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
+  gap: 1rem;
   /* margin-right: 20px; */
 
   @media (max-width: 1000px) {

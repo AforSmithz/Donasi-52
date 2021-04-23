@@ -51,7 +51,7 @@ const Qna = ({ id, index, question, answer }) => {
 
   const [contentRef, inView] = useInView({
     triggerOnce: true,
-    rootMargin: "-300px",
+    rootMargin: "-20%",
   });
 
   useEffect(() => {

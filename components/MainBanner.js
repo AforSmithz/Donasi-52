@@ -84,17 +84,17 @@ export const MainBanner = ({ x, y }) => {
           {/* Berbagi */}
           <motion.span variants={child}>5</motion.span>
           <motion.span variants={child}>2</motion.span>
+          <HoverImage
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: hovered ? 1 : 0,
+              x: x - textPos.left - 300,
+              y: y - textPos.top - 100,
+            }}
+          >
+            <img src="/assets/images/foto2.png" />
+          </HoverImage>
         </Headline>
-        <HoverImage
-          initial={{ opacity: 0 }}
-          animate={{
-            opacity: hovered ? 1 : 0,
-            x: x - textPos.left - 100,
-            y: y - textPos.top - 300,
-          }}
-        >
-          <img src="/assets/images/foto2.png"/>
-        </HoverImage>
       </div>
       <Line
         initial={{ width: 0 }}
@@ -107,8 +107,8 @@ export const MainBanner = ({ x, y }) => {
           scale: 1.1,
           transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.09] },
         }}
-        href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'
-        target='_blank'
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        target="_blank"
         style={{ margin: "2rem" }}
       >
         Donate Now
@@ -168,8 +168,8 @@ export const CharTitle = ({ children, offset, x, y, image }) => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: hovered ? 1 : 0,
-          x: x - textPos.left + 100,
-          y: y - textPos.top - 20,
+          x: x - textPos.left - 200,
+          y: y - textPos.top + 300,
         }}
       >
         <img src={`/assets/images/${image}.png`} />
