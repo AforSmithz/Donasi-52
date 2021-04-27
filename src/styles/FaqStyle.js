@@ -50,7 +50,7 @@ export const Question = styled(motion.div)`
   width: 55vw;
   font-family: "Monument Extended";
   font-weight: 1000;
-  font-size: 3rem;
+  font-size: 1.5rem;
   @media (min-width: 1000px) {
     font-size: 4rem;
   }
