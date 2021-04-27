@@ -4,7 +4,6 @@ import styled from "styled-components";
 export const Headline = styled(motion.div)`
   font-size: 13vw;
   display: flex;
-  position: relative;
   flex-direction: row;
   @media (max-width: 1000px) {
     font-size: 5rem;
