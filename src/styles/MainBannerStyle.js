@@ -50,3 +50,16 @@ export const HoverImage = styled(motion.div)`
     height: 20vh;
   }
 `;
+
+export const Name = styled(motion.div)`
+  position: relative;
+  background: black;
+  width: max-content;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.25rem;
+`;

@@ -21,13 +21,13 @@ const Faq = () => {
       id: "2",
       question: "Kalo ada surplus uangnya kemana? ",
       answer:
-        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanan buka orang-orang yang kurang beruntung",
+        "Surplus akan kami bagikan ke panti asuhan- panti asuhan terdekat sehingga semua pemasukkan akan masuk ke yeng membutuhkan",
     },
     {
       id: "3",
       question: "Masih kurang yakin, Kalo mau nanya lagi kemana?",
       answer:
-        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanana buka orang-orang yang kurang beruntung",
+        "jika masih kurang yakin silahkan kontak narahubung kami dengan cara mengklik link diatas",
     },
   ];
 

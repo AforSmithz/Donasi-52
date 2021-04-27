@@ -4,6 +4,7 @@ import {
   HomeContainer,
   HoverImage,
   Line,
+  Name,
 } from "../styles/MainBannerStyle";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { DonateButton, Flex } from "../styles/globalStyle";
@@ -14,16 +15,30 @@ export const MainBanner = ({ x, y }) => {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
 
   const [hovered, setHovered] = useState(false);
+  const [wa1hovered, setwa1Hovered] = useState(false);
+  const [wa2hovered, setwa2Hovered] = useState(false);
   const [textPos, setTextPos] = useState({ top: 0, left: 0 });
+  const [wa1Pos, setWa1Pos] = useState({ top: 0, left: 0 });
+  const [wa2Pos, setWa2Pos] = useState({ top: 0, left: 0 });
 
   let lima2 = useRef(null);
+  let wa1 = useRef(null);
+  let wa2 = useRef(null);
 
   useEffect(() => {
     setTextPos({
       top: lima2.current.getBoundingClientRect().top,
       left: lima2.current.getBoundingClientRect().left,
     });
-  }, [setTextPos]);
+    setWa1Pos({
+      top: wa1.current.getBoundingClientRect().top,
+      left: wa1.current.getBoundingClientRect().left,
+    });
+    setWa2Pos({
+      top: wa2.current.getBoundingClientRect().top,
+      left: wa2.current.getBoundingClientRect().left,
+    });
+  }, [setTextPos, setWa1Pos, setWa2Pos]);
 
   const limadua = {
     initial: {
@@ -98,7 +113,8 @@ export const MainBanner = ({ x, y }) => {
         initial={{ width: 0 }}
         animate={{ width: "60vw", transition: { ...transition, delay: 1 } }}
       />
-      <DonateButton
+      <br />
+      {/* <DonateButton
         whileHover={{
           background: "black",
           color: "white",
@@ -110,7 +126,7 @@ export const MainBanner = ({ x, y }) => {
         style={{ margin: "2rem" }}
       >
         Donate Now
-      </DonateButton>
+      </DonateButton> */}
       <Flex row gap={"1rem"}>
         <motion.a
           whileHover={{ scale: 1.1 }}
@@ -120,10 +136,49 @@ export const MainBanner = ({ x, y }) => {
         >
           <AiOutlineInstagram size={50} color={"black"} />
         </motion.a>
-        <motion.span whileHover={{ scale: 1.1 }}>
-          <AiOutlineWhatsApp size={50} />
-        </motion.span>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          ref={wa1}
+          onHoverStart={() => setwa1Hovered(true)}
+          onHoverEnd={() => setwa1Hovered(false)}
+          href="https://wa.me/+6285713999343"
+          target="_blank"
+        >
+          <AiOutlineWhatsApp size={50} color={"black"} />
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          ref={wa2}
+          onHoverStart={() => setwa2Hovered(true)}
+          onHoverEnd={() => setwa2Hovered(false)}
+          href="https://wa.me/+6281325308504"
+          target="_blank"
+        >
+          <AiOutlineWhatsApp size={50} color={"black"} />
+        </motion.a>
       </Flex>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Name
+          // initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            x: 30,
+            y: 5,
+          }}
+        >
+          Maruf
+        </Name>
+        <Name
+          // initial={{ opacity: 0 }}
+          animate={{
+            opacity: 1,
+            x: 45,
+            y: 5,
+          }}
+        >
+          Zuldha
+        </Name>
+      </div>
     </HomeContainer>
   );
 };
