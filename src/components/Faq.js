@@ -21,13 +21,13 @@ const Faq = () => {
       id: "2",
       question: "Kalo ada surplus uangnya kemana? ",
       answer:
-        "Surplus akan kami bagikan ke panti asuhan- panti asuhan terdekat sehingga semua pemasukkan akan masuk ke yeng membutuhkan",
+        "Surplus akan kami bagikan ke panti asuhan-panti asuhan terdekat sehingga semua pemasukkan akan masuk ke yeng membutuhkan",
     },
     {
       id: "3",
       question: "Masih kurang yakin, Kalo mau nanya lagi kemana?",
       answer:
-        "jika masih kurang yakin silahkan kontak narahubung kami dengan cara mengklik link diatas",
+        "jika masih kurang yakin, silahkan kontak narahubung kami dengan cara mengklik link diatas",
     },
   ];
 
