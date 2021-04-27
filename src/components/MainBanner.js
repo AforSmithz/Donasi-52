@@ -10,6 +10,7 @@ import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { DonateButton, Flex } from "../styles/globalStyle";
 import { motion, whileHover } from "framer-motion";
 import Letters from "../data/letters.json";
+import ScrollForMore from "./scrollForMore";
 
 export const MainBanner = ({ x, y }) => {
   const transition = { duration: 1.4, ease: [0.6, 0.01, -0.05, 0.9] };
@@ -160,8 +161,7 @@ export const MainBanner = ({ x, y }) => {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <Name
           // initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
+          style={{
             x: 30,
             y: 5,
           }}
@@ -170,8 +170,7 @@ export const MainBanner = ({ x, y }) => {
         </Name>
         <Name
           // initial={{ opacity: 0 }}
-          animate={{
-            opacity: 1,
+          style={{
             x: 45,
             y: 5,
           }}
@@ -179,6 +178,7 @@ export const MainBanner = ({ x, y }) => {
           Zuldha
         </Name>
       </div>
+      {/* <ScrollForMore /> */}
     </HomeContainer>
   );
 };

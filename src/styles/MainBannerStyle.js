@@ -4,6 +4,7 @@ import styled from "styled-components";
 export const Headline = styled(motion.div)`
   font-size: 13vw;
   display: flex;
+  position: relative;
   flex-direction: row;
   @media (max-width: 1000px) {
     font-size: 5rem;
@@ -55,11 +56,30 @@ export const Name = styled(motion.div)`
   position: relative;
   background: black;
   width: max-content;
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
+  text-align: center;
+  padding-left: 1vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  padding-right: 1vh;
   border-radius: 10px;
   color: white;
-  font-size: 1.25rem;
+  font-size: 2vh;
+`;
+
+export const DownArrow = styled(motion.div)`
+  position: absolute;
+  bottom: 200px;
+  left: 200px;
+  z-index: 20;
+  .icon {
+    svg {
+      height: auto;
+      width: 28px;
+    }
+  }
+  .text {
+    margin-top: 8px;
+    color: $white;
+    text-transform: uppercase;
+  }
 `;

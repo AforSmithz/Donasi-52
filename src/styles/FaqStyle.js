@@ -16,7 +16,8 @@ export const FaqContainer = styled(motion.div)`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  margin-bottom: 3rem;
+  /* gap: 1rem; */
   /* margin-right: 20px; */
 
   @media (max-width: 500px) {
@@ -49,7 +50,7 @@ export const Question = styled(motion.div)`
   width: 55vw;
   font-family: "Darker Grotesque";
   font-weight: 1000;
-  font-size: 1rem;
+  font-size: 3rem;
   @media (min-width: 1000px) {
     font-size: 4rem;
   }
@@ -84,7 +85,7 @@ export const Answer = styled(motion.div)`
   /* height: 100%; */
   font-size: 2vw;
   @media (max-width: 500px) {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
 
   ${(props) =>
