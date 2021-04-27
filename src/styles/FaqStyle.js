@@ -48,7 +48,7 @@ export const Question = styled(motion.div)`
   align-items: center;
   height: 100%;
   width: 55vw;
-  font-family: "Darker Grotesque";
+  font-family: "Monument Extended";
   font-weight: 1000;
   font-size: 3rem;
   @media (min-width: 1000px) {
