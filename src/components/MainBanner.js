@@ -114,7 +114,6 @@ export const MainBanner = ({ x, y }) => {
         initial={{ width: 0 }}
         animate={{ width: "60vw", transition: { ...transition, delay: 1 } }}
       />
-      <br />
       <DonateButton
         whileHover={{
           background: "black",
