@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 export const Dropdown = styled.div`
   height: 100%;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 5rem;
   padding-bottom: 200px;
@@ -15,28 +16,29 @@ export const FaqContainer = styled(motion.div)`
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  margin-bottom: 3rem;
   /* margin-right: 20px; */
 
-  @media (max-width: 1000px) {
+  @media (max-width: 500px) {
     align-items: center;
   }
 
   ${(props) =>
     props.right &&
     css`
-      padding-right: 10px;
+      ${"" /* padding-right: 10px; */}
       @media (min-width: 500px) {
         align-items: flex-end;
       }
     `}
   flex-direction: column;
-  /* ${(props) =>
+  ${(props) =>
     props.right ||
     css`
+      @media (min-width: 500px) {
         padding-left: 50px;
       }
-    `} */
+    `}
 `;
 
 export const Question = styled(motion.div)`
@@ -46,7 +48,7 @@ export const Question = styled(motion.div)`
   height: 100%;
   width: 55vw;
   font-family: "Monument Extended";
-  font-size: 1rem;
+  font-size: 1.5rem;
   @media (min-width: 1000px) {
     font-size: 4rem;
   }
@@ -77,12 +79,21 @@ export const Answer = styled(motion.div)`
   overflow: hidden;
   box-sizing: border-box;
   width: 40vw;
-  margin-left: 100px;
+  margin-left: 75px;
   /* height: 100%; */
   font-size: 2vw;
   @media (max-width: 500px) {
-    font-size: 3.5vw;
+    font-size: 5vw;
   }
+
+  ${(props) =>
+    props.right &&
+    css`
+      @media (min-width: 500px) {
+        margin-left: 0px;
+        margin-right: 125px;
+      }
+    `}
 
   margin-top: 20px;
 `;
