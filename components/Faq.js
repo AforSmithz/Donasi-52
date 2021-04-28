@@ -9,7 +9,7 @@ const Faq = () => {
       id: "0",
       question: "Donasinya akan dibagikan dalam bentuk apa?",
       answer:
-        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanana buka orang-orang yang kurang beruntung",
+        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanan buka bagi orang-orang yang kurang beruntung",
     },
     {
       id: "1",
@@ -21,13 +21,13 @@ const Faq = () => {
       id: "2",
       question: "Kalo ada surplus uangnya kemana? ",
       answer:
-        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanan buka orang-orang yang kurang beruntung",
+        "Surplus akan kami bagikan ke panti asuhan terdekat sehingga semua pemasukkan akan masuk ke yang membutuhkan",
     },
     {
       id: "3",
       question: "Masih kurang yakin, Kalo mau nanya lagi kemana?",
       answer:
-        "Donasi akan dibagikan dalam bentuk nasi bungkus sebagai makanana buka orang-orang yang kurang beruntung",
+        "jika masih kurang yakin, silahkan kontak narahubung kami dengan cara mengklik link diatas",
     },
   ];
 
@@ -86,7 +86,10 @@ const Qna = ({ id, index, question, answer }) => {
           <span>{index + 1}</span>
           {question}
         </Question>
-        <Answer animate={{ height: id === expanded ? "100%" : "0" }}>
+        <Answer
+          right={!((index + 1) % 2)}
+          animate={{ height: id === expanded ? "100%" : "0" }}
+        >
           {answer}
         </Answer>
       </FaqContainer>

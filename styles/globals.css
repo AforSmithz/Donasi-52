@@ -353,7 +353,7 @@ template {
 [hidden] {
   display: none;
 }
-*/ * {
+* {
   text-decoration: none;
 }
 
