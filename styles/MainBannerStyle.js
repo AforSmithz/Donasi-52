@@ -28,6 +28,7 @@ export const TitleSpan = styled(motion.span)`
 `;
 
 export const HomeContainer = styled(motion.div)`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,4 +50,18 @@ export const HoverImage = styled(motion.div)`
   img {
     height: 20vh;
   }
+`;
+
+export const Name = styled(motion.div)`
+  position: relative;
+  background: black;
+  width: max-content;
+  text-align: center;
+  padding-left: 1vh;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  padding-right: 1vh;
+  border-radius: 10px;
+  color: white;
+  font-size: 2vh;
 `;

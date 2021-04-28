@@ -4,6 +4,7 @@ import {
   HomeContainer,
   HoverImage,
   Line,
+  Name,
 } from "../styles/MainBannerStyle";
 import { AiOutlineInstagram, AiOutlineWhatsApp } from "react-icons/ai";
 import { DonateButton, Flex } from "../styles/globalStyle";
@@ -66,7 +67,6 @@ export const MainBanner = ({ x, y }) => {
     <HomeContainer>
       <div>
         <Headline variants={limadua} initial="initial" animate="animate">
-          {/* 52 */}
           {Letters.map((item) => (
             <CharTitle key={item.id} x={x} y={y} image={item.image}>
               {item.letter}
@@ -81,7 +81,6 @@ export const MainBanner = ({ x, y }) => {
           onHoverEnd={() => setHovered(false)}
           ref={lima2}
         >
-          {/* Berbagi */}
           <motion.span variants={child}>5</motion.span>
           <motion.span variants={child}>2</motion.span>
           <HoverImage
@@ -92,7 +91,7 @@ export const MainBanner = ({ x, y }) => {
               y: y - textPos.top - 100,
             }}
           >
-            <img src="/assets/images/foto2.png" />
+            <img src="assets/images/foto2.png" />
           </HoverImage>
         </Headline>
       </div>
@@ -107,7 +106,7 @@ export const MainBanner = ({ x, y }) => {
           scale: 1.1,
           transition: { duration: 0.6, ease: [0.6, 0.05, -0.01, 0.09] },
         }}
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        href="https://forms.gle/CfBXhRkbfxmcyyH76"
         target="_blank"
         style={{ margin: "2rem" }}
       >
@@ -122,10 +121,41 @@ export const MainBanner = ({ x, y }) => {
         >
           <AiOutlineInstagram size={50} color={"black"} />
         </motion.a>
-        <motion.span whileHover={{ scale: 1.1 }}>
-          <AiOutlineWhatsApp size={50} />
-        </motion.span>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          href="https://wa.me/+6285713999343"
+          target="_blank"
+        >
+          <AiOutlineWhatsApp size={50} color={"black"} />
+        </motion.a>
+        <motion.a
+          whileHover={{ scale: 1.1 }}
+          href="https://wa.me/+6281325308504"
+          target="_blank"
+        >
+          <AiOutlineWhatsApp size={50} color={"black"} />
+        </motion.a>
       </Flex>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <Name
+          // initial={{ opacity: 0 }}
+          style={{
+            x: 30,
+            y: 5,
+          }}
+        >
+          Maruf
+        </Name>
+        <Name
+          // initial={{ opacity: 0 }}
+          style={{
+            x: 45,
+            y: 5,
+          }}
+        >
+          Zuldha
+        </Name>
+      </div>
     </HomeContainer>
   );
 };
@@ -172,7 +202,7 @@ export const CharTitle = ({ children, offset, x, y, image }) => {
           y: y - textPos.top + 300,
         }}
       >
-        <img src={`/assets/images/${image}.png`} />
+        <img src={`assets/images/${image}.png`} />
       </HoverImage>
     </>
   );

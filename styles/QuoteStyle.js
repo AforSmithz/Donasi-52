@@ -6,11 +6,15 @@ export const QuoteContainer = styled.div`
   justify-content: center;
   align-items: center;
   p {
-    margin-bottom: 350px;
+    margin-bottom: 200px;
     @media (min-width: 1000px) {
       font-size: 3rem;
+      margin-bottom: 350px;
     }
-    font-size: 1rem;
+    @media (max-width: 400px) {
+      font-size: 1.25rem;
+    }
+    font-size: 1.5rem;
     position: relative;
   }
 `;
