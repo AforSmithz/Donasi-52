@@ -99,7 +99,7 @@ export const MainBanner = ({ x, y }) => {
         initial={{ width: 0 }}
         animate={{ width: "60vw", transition: { ...transition, delay: 1 } }}
       />
-      <DonateButton
+      {/* <DonateButton
         whileHover={{
           background: "black",
           color: "white",
@@ -111,7 +111,8 @@ export const MainBanner = ({ x, y }) => {
         style={{ margin: "2rem" }}
       >
         Donate Now
-      </DonateButton>
+      </DonateButton> */}
+      <br/>
       <Flex row gap={"1rem"}>
         <motion.a
           whileHover={{ scale: 1.1 }}

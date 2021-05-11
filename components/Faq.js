@@ -79,7 +79,7 @@ const Qna = ({ id, index, question, answer }) => {
             y: 72,
           },
         }}
-        right={(index + 1) % 2 ? false : true}
+        right={!((index + 1) % 2)}
         key={id}
       >
         <Question onClick={() => setExpanded(id === expanded ? false : id)}>
